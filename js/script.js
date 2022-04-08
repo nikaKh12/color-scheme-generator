@@ -67,7 +67,7 @@ function generateScheme(option) {
         fifthText.textContent = data.colors[4].hex.value;
       });
   } else {
-    alert("Please change color");
+    alert("Change the color");
   }
 }
 
