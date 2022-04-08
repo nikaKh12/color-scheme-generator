@@ -7,11 +7,11 @@ const thirdColor = document.getElementById("color-3");
 const fourthColor = document.getElementById("color-4");
 const fifthColor = document.getElementById("color-5");
 const options = document.getElementById("optionsId");
-const firstText = document.getElementById("text-1");
-const secondText = document.getElementById("text-2");
-const thirdText = document.getElementById("text-3");
-const fourthText = document.getElementById("text-4");
-const fifthText = document.getElementById("text-5");
+const firstColorValue = document.getElementById("color-value-1");
+const secondColorValue = document.getElementById("color-value-2");
+const thirdColorValue = document.getElementById("color-value-3");
+const fourthColorValue = document.getElementById("color-value-4");
+const fifthColorValue = document.getElementById("color-value-5");
 const darkModeOff = document.getElementById("darkModeOff");
 const darkModeOn = document.getElementById("darkModeOn");
 const topSide = document.getElementById("topSide");
@@ -24,24 +24,24 @@ let colorValue;
 
 function copyToClipboard() {
   firstColor.addEventListener("click", function () {
-    navigator.clipboard.writeText(firstText.textContent);
-    alert(`Copied to clipboard: ${firstText.textContent}`);
+    navigator.clipboard.writeText(firstColorValue.textContent);
+    alert(`Copied to clipboard: ${firstColorValue.textContent}`);
   });
   secondColor.addEventListener("click", function () {
-    navigator.clipboard.writeText(secondText.textContent);
-    alert(`Copied to clipboard: ${secondText.textContent}`);
+    navigator.clipboard.writeText(secondColorValue.textContent);
+    alert(`Copied to clipboard: ${secondColorValue.textContent}`);
   });
   thirdColor.addEventListener("click", function () {
-    navigator.clipboard.writeText(thirdText.textContent);
-    alert(`Copied to clipboard: ${thirdText.textContent}`);
+    navigator.clipboard.writeText(thirdColorValue.textContent);
+    alert(`Copied to clipboard: ${thirdColorValue.textContent}`);
   });
   fourthColor.addEventListener("click", function () {
-    navigator.clipboard.writeText(fourthText.textContent);
-    alert(`Copied to clipboard: ${fourthText.textContent}`);
+    navigator.clipboard.writeText(fourthColorValue.textContent);
+    alert(`Copied to clipboard: ${fourthColorValue.textContent}`);
   });
   fifthColor.addEventListener("click", function () {
-    navigator.clipboard.writeText(fifthText.textContent);
-    alert(`Copied to clipboard: ${fifthText.textContent}`);
+    navigator.clipboard.writeText(fifthColorValue.textContent);
+    alert(`Copied to clipboard: ${fifthColorValue.textContent}`);
   });
 }
 
@@ -60,11 +60,11 @@ function generateScheme(option) {
         fourthColor.style.backgroundColor = data.colors[3].hex.value;
         fifthColor.style.backgroundColor = data.colors[4].hex.value;
 
-        firstText.textContent = data.colors[0].hex.value;
-        secondText.textContent = data.colors[1].hex.value;
-        thirdText.textContent = data.colors[2].hex.value;
-        fourthText.textContent = data.colors[3].hex.value;
-        fifthText.textContent = data.colors[4].hex.value;
+        firstColorValue.textContent = data.colors[0].hex.value;
+        secondColorValue.textContent = data.colors[1].hex.value;
+        thirdColorValue.textContent = data.colors[2].hex.value;
+        fourthColorValue.textContent = data.colors[3].hex.value;
+        fifthColorValue.textContent = data.colors[4].hex.value;
       });
   } else {
     alert("Change the color");
