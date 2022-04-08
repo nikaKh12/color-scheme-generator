@@ -46,25 +46,29 @@ function copyToClipboard() {
 }
 
 function generateScheme(option) {
-  fetch(
-    `https://www.thecolorapi.com/scheme?hex=${colorValue.substring(
-      1
-    )}&mode=${option}&count=5`
-  )
-    .then((response) => response.json())
-    .then((data) => {
-      firstColor.style.backgroundColor = data.colors[0].hex.value;
-      secondColor.style.backgroundColor = data.colors[1].hex.value;
-      thirdColor.style.backgroundColor = data.colors[2].hex.value;
-      fourthColor.style.backgroundColor = data.colors[3].hex.value;
-      fifthColor.style.backgroundColor = data.colors[4].hex.value;
+  if (colorValue !== undefined) {
+    fetch(
+      `https://www.thecolorapi.com/scheme?hex=${colorValue.substring(
+        1
+      )}&mode=${option}&count=5`
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        firstColor.style.backgroundColor = data.colors[0].hex.value;
+        secondColor.style.backgroundColor = data.colors[1].hex.value;
+        thirdColor.style.backgroundColor = data.colors[2].hex.value;
+        fourthColor.style.backgroundColor = data.colors[3].hex.value;
+        fifthColor.style.backgroundColor = data.colors[4].hex.value;
 
-      firstText.textContent = data.colors[0].hex.value;
-      secondText.textContent = data.colors[1].hex.value;
-      thirdText.textContent = data.colors[2].hex.value;
-      fourthText.textContent = data.colors[3].hex.value;
-      fifthText.textContent = data.colors[4].hex.value;
-    });
+        firstText.textContent = data.colors[0].hex.value;
+        secondText.textContent = data.colors[1].hex.value;
+        thirdText.textContent = data.colors[2].hex.value;
+        fourthText.textContent = data.colors[3].hex.value;
+        fifthText.textContent = data.colors[4].hex.value;
+      });
+  } else {
+    alert("Please change color");
+  }
 }
 
 color.addEventListener("input", function () {
